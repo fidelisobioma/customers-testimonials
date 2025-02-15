@@ -11,7 +11,7 @@ function Testimonails({ details }) {
   };
   return (
     <div className="wrapper">
-      <div className="container">
+      <div className="container ">
         <div className="image-container">
           <div className="image">
             <img src={detail.image} alt="" />
