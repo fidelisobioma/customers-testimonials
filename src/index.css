@@ -20,7 +20,7 @@ body {
 }
 
 .image-container {
-  background-image: url(src/assets/pattern-bg.svg);
+  background-image: url(/src/assets/pattern-bg.svg);
   max-width: 600px;
   height: 400px;
   background-repeat: no-repeat;
@@ -41,7 +41,7 @@ body {
   width: 100%;
 }
 .text-container {
-  background-image: url(src/assets/pattern-quotes.svg);
+  background-image: url(/src/assets/pattern-quotes.svg);
   background-repeat: no-repeat;
   background-position: top center;
   text-align: center;
