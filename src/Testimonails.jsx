@@ -1,31 +1,38 @@
 import "./index.css";
-import tanya from "/src/assets/image-tanya.jpg";
-import john from "/src/assets/image-john.jpg";
-function Testimonails() {
+import { useState } from "react";
+function Testimonails({ details }) {
+  const [index, setIndex] = useState(0);
+  const detail = details[index];
+  const handleClickNext = () => {
+    setIndex(index === details.length - 1 ? index - 1 : index + 1);
+  };
+  const handleClickPrev = () => {
+    setIndex(index === 0 ? index + 1 : index - 1);
+  };
   return (
     <div className="wrapper">
       <div className="container">
         <div className="image-container">
           <div className="image">
-            <img src={tanya} alt="" />
+            <img src={detail.image} alt="" />
           </div>
           <div className="button">
-            <div className="prev">
+            <div className="prev" onClick={handleClickPrev}>
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="18">
                 <path
                   fill="none"
                   stroke="#8585AC"
-                  stroke-width="3"
+                  strokeWidth="3"
                   d="M11 1L3 9l8 8"
                 />
               </svg>
             </div>
-            <div className="next">
+            <div className="next" onClick={handleClickNext}>
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="18">
                 <path
                   fill="none"
                   stroke="#8585AC"
-                  stroke-width="3"
+                  strokeWidth="3"
                   d="M2 1l8 8-8 8"
                 />
               </svg>
@@ -33,14 +40,10 @@ function Testimonails() {
           </div>
         </div>
         <div className="text-container">
-          <p className="qoute">
-            “ I’ve been interested in coding for a while but never taken the
-            jump, until now. I couldn’t recommend this course enough. I’m now in
-            the job of my dreams and so excited about the future. ”
-          </p>
+          <p className="qoute">{detail.feedback}</p>
           <div className="info">
-            <p className="name">Tanya Sinclair</p>
-            <p className="profession">UX Engineer</p>
+            <p className="name">{detail.name}</p>
+            <p className="profession">{detail.profession}</p>
           </div>
         </div>
       </div>
