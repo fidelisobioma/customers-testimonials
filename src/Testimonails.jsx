@@ -2,16 +2,25 @@ import "./index.css";
 import { useState } from "react";
 function Testimonails({ details }) {
   const [index, setIndex] = useState(0);
+  const [fade, setFade] = useState(false);
   const detail = details[index];
   const handleClickNext = () => {
     setIndex(index === details.length - 1 ? index - 1 : index + 1);
+    setFade(true);
+    setTimeout(() => {
+      setFade(false);
+    }, 500);
   };
   const handleClickPrev = () => {
     setIndex(index === 0 ? index + 1 : index - 1);
+    setFade(true);
+    setTimeout(() => {
+      setFade(false);
+    }, 500);
   };
   return (
     <div className="wrapper">
-      <div className="container ">
+      <div className={`container ${fade ? "fadeout" : "fadein"}`}>
         <div className="image-container">
           <div className="image">
             <img src={detail.image} alt="" />

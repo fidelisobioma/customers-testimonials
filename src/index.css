@@ -16,9 +16,15 @@ body {
   text-align: center;
   font-size: 32px;
   padding: 10px;
-  position: relative;
+  opacity: 1;
+  transform: opacity 0.5s ease-out;
 }
-
+.fadeout {
+  opacity: 0.8;
+}
+.fadein {
+  opacity: 1;
+}
 .image-container {
   background-image: url(/src/assets/pattern-bg.svg);
   max-width: 600px;
